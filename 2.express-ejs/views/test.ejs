@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test Passing Data</title>
-  </head>
-  <body>
-    <h1>Random Number from index.js: <%= random %></h1>
-    <% if(random%2 === 0){%>
-    <h3>Even number</h3>
-    <% }else{%>
-    <h3>Odd number</h3>
-    <% }%>
+<%- include('partials/header.ejs')%> <%-include('partials/navbar.ejs') %>
 
-    <h3>This number is <%= random%2===0?'even':'odd' %></h3>
-  </body>
-</html>
+<h1>Random Number from index.js: <%= random %></h1>
+<% if(random%2 === 0){%>
+<h3>Even number</h3>
+<% }else{%>
+<h3>Odd number</h3>
+<% }%>
+
+<h3>This number is <%= random%2===0?'even':'odd' %></h3>
+
+<%- include('partials/footer.ejs') %>

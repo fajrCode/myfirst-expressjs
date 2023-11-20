@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= data.title %> | DevApp</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-  </head>
-  <body>
-    <h1>This is tag <%= data.title %></h1>
-    <img src="<%= data.img %>" alt="img <%= data.title %>" />
-    <p>Description: <%= data.description %></p>
-    <hr />
-    <article>
-      <% for (let post of data.posts) { %>
-      <p><%= post.title %> by <%= post.author %></p>
-      <% } %>
-    </article>
-    <script src="/js/bootstrap.min.js"></script>
-  </body>
-</html>
+<%- include('partials/header.ejs') %> <%- include('partials/navbar.ejs') %>
+<h1>This is tag <%= data.title %></h1>
+<img src="<%= data.img %>" alt="img <%= data.title %>" />
+<p>Description: <%= data.description %></p>
+<hr />
+<article>
+  <% for (let post of data.posts) { %>
+  <p><%= post.title %> by <%= post.author %></p>
+  <% } %>
+</article>
+
+<%- include('partials/footer.ejs') %>

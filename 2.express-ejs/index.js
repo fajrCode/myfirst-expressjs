@@ -33,9 +33,9 @@ app.get("/cats", (req, res) => {
   res.render("cats", { cats });
 });
 
-app.get("*", (req, res) => {
-  res.render("<h1>Error 404: Page not Found</h1>");
-});
+// app.get('*', (req, res) => {
+//   res.render("<h1>Error 404: Page not Found</h1>");
+// });
 
 app.listen(5000, () => {
   console.log("listening on host http://localhost:5000");
