@@ -1,0 +1,18 @@
+{
+  "name": "1.first-express-project",
+  "version": "1.0.0",
+  "description": "first practice learning express JS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test" : "nodemon index.js"
+  },
+  "keywords": [
+    "expressJS"
+  ],
+  "author": "fajr",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
