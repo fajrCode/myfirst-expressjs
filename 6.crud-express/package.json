@@ -1,0 +1,16 @@
+{
+  "name": "6.crud-express",
+  "version": "1.0.0",
+  "description": "build crud on expressJS with mr.Dea A",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "author": "fajr",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  }
+}
