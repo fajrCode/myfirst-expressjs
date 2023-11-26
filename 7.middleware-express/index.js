@@ -3,7 +3,7 @@ const app = express();
 const port = 5000;
 const morgan = require("morgan"); //package to show log from activity req client
 
-//app.use(morgan("tiny")); // middleware is use first before execute code above
+app.use(morgan("tiny")); // middleware is use first before execute code above
 //test middleware custom
 // app.use((req,res, next) => {
 //   console.log("hello middleware");
@@ -17,19 +17,24 @@ const morgan = require("morgan"); //package to show log from activity req client
 //     next();
 //   });
 
-app.use((req, res, next) => {
-  req.timeRequest = Date.now();
-  console.log(req.method, req.url, res.statusCode, req.timeRequest);
-  next();
-});
+// app.use((req, res, next) => {
+//   req.timeRequest = Date.now();
+//   console.log(req.method, req.url, res.statusCode, req.timeRequest);
+//   next();
+// });
 
 app.get("/", (req, res) => {
   res.send("Response Success");
-  console.log(req.timeRequest);
+//   console.log(req.timeRequest);
 });
 
 app.get("/test", (req, res) => {
   res.send("Response Test Success");
+});
+
+//direct bad url  using middleware.
+app.use((req, res) => {
+  res.status(404).send("Page not Found");
 });
 
 app.listen(port, () => {
