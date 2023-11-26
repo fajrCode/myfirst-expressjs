@@ -23,21 +23,26 @@ app.use(morgan("tiny")); // middleware is use first before execute code above
 //   next();
 // });
 
-app.use((req,res,next)=>{
-    const {password} = req.query; //just for train,
-    if(password === 'password'){
-        next();
-    }
-    res.send('Need Password to access')
-})
+const auth = (req, res, next) => {
+  const { password } = req.query; //just for train,
+  if (password === "password") {
+    next();
+  }
+  res.send("Need Password to access");
+};
 
 app.get("/", (req, res) => {
   res.send("Response Success");
-//   console.log(req.timeRequest);
+  //   console.log(req.timeRequest);
 });
 
 app.get("/test", (req, res) => {
   res.send("Response Test Success");
+});
+
+//set middleware as a function before and be first callback in the parameter
+app.get("/admin", auth, (req, res) => {
+    res.send("Hello admin")
 });
 
 //direct bad url  using middleware.
