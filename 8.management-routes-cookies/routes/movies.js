@@ -2,7 +2,9 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.send("Home Movies");
+  const { user = "noname" } = req.cookies;
+
+  res.send(`hello ${user} Movies`);
 });
 
 router.get("/:id", (req, res) => {

@@ -1,15 +1,17 @@
 const express = require("express");
 const router = express.Router();
 
-router.use((req,res,next)=>{
-    //check from query (for example)
-    if(req.query.isAdmin){
-        next()
-    }
-    res.send('Sorry only for Administrator!')
-})
+router.use((req, res, next) => {
+  //check from query (for example)
+  if (req.query.isAdmin) {
+    next();
+  }
+  res.send("Sorry only for Administrator!");
+});
 
 router.get("/", (req, res) => {
+    //add cookies
+  res.cookie("user", "admin");
   res.send("Dashboard Admin");
 });
 
