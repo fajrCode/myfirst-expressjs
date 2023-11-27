@@ -10,9 +10,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 //define routes
-app.get("/", (req, res) => {
-  res.send("Response Success");
-});
+app.use('/theater',require('./routes/theater'));
+app.use('/movies',require('./routes/movies'));
 
 //start server
 app.listen(port, () => {
