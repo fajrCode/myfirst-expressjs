@@ -1,4 +1,3 @@
-const db = require("./../config/db");
 const dbPool = require("./../config/db");
 
 const getAllUsers = () => {
